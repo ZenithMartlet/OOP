@@ -1,0 +1,46 @@
+//In this activity you must create a three comstructor, private and scanner.
+
+import java.util.Scanner;
+
+public class Student {
+    
+    private String name;
+    private String address;
+    private int age;
+    
+    public Student() {
+        name = "No name yet";
+        address = "No address yet";
+        age = 0;
+    }
+    
+    public Student(String name, String address, int age) {
+        this.name = name;
+        this.address = address;
+        this.age = age;
+    }
+    
+    public static void main(String [] args) {
+        Scanner sc = new Scanner(System.in);
+        Student student = new Student();
+        
+        System.out.println("Name: " + student.name);
+        System.out.println("Address: " + student.address);
+        System.out.println("Age: " + student.age);
+        
+        System.out.print("Enter your name: ");
+        student.name = sc.nextLine();
+        System.out.print("Enter your address: ");
+        student.address = sc.nextLine();
+        System.out.print("Enter your age: ");
+        student.age = sc.nextInt();
+        
+        Student student1 = new Student(student.name, student.address, student.age);
+        student1.display();
+        
+    }
+    
+    public void display() {
+        System.out.print("Hi " + name + " Your age is " + age + " Your address is " + address);
+    }
+}
